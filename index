@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Between Strangers</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ezv1afz.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LEFT YELLOW PANEL -->
+  <aside id="left">
+    <button id="infoBtn" aria-label="About this project">?</button>
+    <div id="top">
+      <div id="indexTitle">PHOTO INDEX</div>
+      <div id="preview">
+        <span id="previewLabel">PREVIEW</span>
+        <img id="previewImg" alt="" hidden>
+      </div>
+    </div>
+    <div id="index"></div>
+    <div id="infoPanel" hidden>
+      <p>Between Strangers is an archive of public messages found throughout New York City, exploring how strangers communicate through shared spaces without ever directly meeting. Browse these exchanges, discover patterns of human intervention, and remix existing messages into new interpretations of your own.</p>
+    </div>
+  </aside>
+
+  <!-- MAIN ARTBOARD PANEL -->
+  <main>
+    <nav id="nav">
+      <span></span>
+      <a id="home" href="." aria-label="Between Strangers – reset"><img src="BetweenStrangers_Title.png" alt="Between Strangers"></a>
+      <button id="modesBtn">7 MODES OF INTERACTION</button>
+    </nav>
+
+    <div id="filters"></div>
+
+    <div id="promptBox">
+      <button id="rand"><img src="Extra_Buttons/Randomize.png" alt=""><span>RANDOM</span></button>
+      <p id="promptText">Explore the photo index to begin.</p>
+    </div>
+
+    <div id="controls">
+      <button class="icon" id="undo" aria-label="Undo"><img src="Extra_Buttons/UndoIcon.png" alt=""></button>
+      <button class="icon" id="redo" aria-label="Redo"><img src="Extra_Buttons/RedoIcon.png" alt=""></button>
+      <label for="size">SIZE</label>
+      <input id="size" type="range" min="1" max="100" value="50">
+      <div id="colors" hidden>
+        <button class="dot on" data-color="#000000" aria-label="Black" style="background:#000"></button>
+        <button class="dot" data-color="#ffffff" aria-label="White" style="background:#fff"></button>
+      </div>
+    </div>
+
+    <div id="board"><canvas id="c"></canvas></div>
+
+    <div id="tools">
+      <button class="tool on" data-tool="move"><span class="c"><img src="Interaction_Tools/SelectIcon.png" alt=""></span><span>MOVE</span></button>
+      <button class="tool" data-tool="type"><span class="c"><img src="Interaction_Tools/TypeIcon.png" alt=""></span><span>TYPE</span></button>
+      <button class="tool" data-tool="draw"><span class="c"><img src="Interaction_Tools/DrawIcon.png" alt=""></span><span>DRAW</span></button>
+      <button class="tool" data-tool="erase"><span class="c"><img src="Interaction_Tools/EraseIcon.png" alt=""></span><span>ERASE</span></button>
+      <button class="tool" id="dup"><span class="c"><img src="Interaction_Tools/DuplicateIcon.png" alt=""></span><span>DUPLICATE</span></button>
+      <button class="sq" id="clear"><img src="Extra_Buttons/DeleteIcon.png" alt=""><span>DELETE ALL</span></button>
+      <button class="sq" id="save"><img src="Interaction_Tools/SaveIcon.png" alt=""><span>SAVE</span></button>
+    </div>
+  </main>
+
+  <!-- 7 MODES CARD -->
+  <div id="modes" hidden>
+    <button id="modesClose" aria-label="Close">×</button>
+    <img src="7ModesCard.jpg" alt="The 7 modes of interaction">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
