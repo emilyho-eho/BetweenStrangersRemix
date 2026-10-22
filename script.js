@@ -92,7 +92,7 @@ let cross = 'crosshair';
       cross = `url(${c.toDataURL()}) 16 16, crosshair`; applyTool();
     } catch (e) { /* keep fallback cursor */ }
   };
-  img.src = 'Extra_Buttons/Crosshair.png';
+  img.src = 'Assets/Extra_Buttons/Crosshair.png';
 })();
 
 /* ---------- TOOLS ---------- */
@@ -225,16 +225,16 @@ const index = $('#index');
 CATS.forEach(cat => {
   const sec = document.createElement('section'); sec.className = 'cat';
   sec.innerHTML = `<h3>${cat.label}</h3><div class="row">
-    <button class="arrow" aria-label="Scroll left"><img src="Extra_Buttons/LeftSelect.png" alt=""></button>
+    <button class="arrow" aria-label="Scroll left"><img src="Assets/Extra_Buttons/LeftSelect.png" alt=""></button>
     <div class="strip"></div>
-    <button class="arrow" aria-label="Scroll right"><img src="Extra_Buttons/RightSelect.png" alt=""></button></div>`;
+    <button class="arrow" aria-label="Scroll right"><img src="Assets/Extra_Buttons/RightSelect.png" alt=""></button></div>`;
   const strip = sec.querySelector('.strip');
   const [l, r] = sec.querySelectorAll('.arrow');
   l.onclick = () => strip.scrollBy({ left: -160 });
   r.onclick = () => strip.scrollBy({ left: 160 });
 
   for (let i = 1; i <= cat.n; i++) {
-    const src = `${cat.folder}/${cat.folder}(${i}).jpg`;
+    const src = `Assets/Photos/${cat.folder}/${cat.folder}(${i}).jpg`;
     const t = document.createElement('img');
     t.className = 'thumb'; t.src = src; t.alt = `${cat.label} ${i}`; t.loading = 'lazy';
     t.onload = () => t.classList.toggle('portrait', t.naturalHeight > t.naturalWidth);
@@ -254,7 +254,7 @@ CATS.forEach(cat => {
 $('#rand').onclick = () => {
   const cat = CATS[Math.floor(Math.random() * CATS.length)];
   const i = 1 + Math.floor(Math.random() * cat.n);
-  const src = `${cat.folder}/${cat.folder}(${i}).jpg`;
+  const src = `Assets/Photos/${cat.folder}/${cat.folder}(${i}).jpg`;
   locked = { mode: cat.mode, src };
   allThumbs.forEach(x => x.classList.toggle('sel', x.getAttribute('src') === src));
   restoreLocked();
